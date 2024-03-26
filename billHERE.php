@@ -25,7 +25,7 @@ if (isset($_POST["sensor_id"]) && isset($_POST["sensor_value"])) {
 
     if (mysqli_num_rows($result_check) > 0) {
         // If a row exists, update the existing row
-        $amount = $sensor_value * 12; // Assuming $12 per unit
+        $amount = $sensor_value * 10; // Assuming $12 per unit
         $sql_update = "UPDATE sensor_readings SET readings_value = '$sensor_value', amount = '$amount' WHERE sensor_id = '$sensor_id'";
         if (mysqli_query($conn, $sql_update)) {
             echo "Record updated successfully";

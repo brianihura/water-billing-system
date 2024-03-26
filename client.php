@@ -32,8 +32,8 @@ session_start();
             </div>
             <div class="bill">
                 <h1>Your Bill</h1>
-                <p>0 ksh</p>
-                <i>120 per litre</i>
+                <p><i><?php echo isset($_SESSION["amount"]) ? $_SESSION["amount"] . " Ksh" : "0 Ksh"; ?></p>
+                <i>10 per litre</i>
             </div>
         </div>
         <div class="moreInfo">

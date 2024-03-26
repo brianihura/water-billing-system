@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($conn->query($insert_reading_sql) === TRUE) {
                 $_SESSION["username"] = $name;
                 $_SESSION["email"] = $email;
-                header("Location: client.php"); // Redirect to dashboard or another authenticated page
+                header("Location: login.html"); // Redirect to dashboard or another authenticated page
                 exit();
             } else {
                 echo "Error inserting sensor reading: " . $conn->error;

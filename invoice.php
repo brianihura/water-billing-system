@@ -81,7 +81,7 @@ session_start();
       }
 
       // Price per liter
-      var pricePerLiter = 120;
+      var pricePerLiter = 10;
 
       // Generate the water bill
       var table = document.getElementById('invoiceTable');
