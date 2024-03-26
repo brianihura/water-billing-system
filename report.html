@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monthly Water Consumption Report</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input {
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    h2 {
+      margin-top: 20px;
+    }
+
+    canvas {
+      max-width: 80%;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Monthly Water Consumption Report</h1>
+
+  <label for="dailyConsumption1">Enter daily water consumption for Month 1 (liters):</label>
+  <input type="number" id="dailyConsumption1" placeholder="Enter daily consumption for Month 1" required>
+
+  <label for="dailyConsumption2">Enter daily water consumption for Month 2 (liters):</label>
+  <input type="number" id="dailyConsumption2" placeholder="Enter daily consumption for Month 2" required>
+
+  <label for="dailyConsumption3">Enter daily water consumption for Month 3 (liters):</label>
+  <input type="number" id="dailyConsumption3" placeholder="Enter daily consumption for Month 3" required>
+
+  <button onclick="generateReport()">Generate Report</button>
+
+  <h2>Monthly Report</h2>
+  <canvas id="monthlyChart"></canvas>
+
+  <script>
+    function generateReport() {
+      var dailyConsumption1 = parseFloat(document.getElementById('dailyConsumption1').value);
+      var dailyConsumption2 = parseFloat(document.getElementById('dailyConsumption2').value);
+      var dailyConsumption3 = parseFloat(document.getElementById('dailyConsumption3').value);
+
+      if (isNaN(dailyConsumption1) || dailyConsumption1 <= 0 ||
+          isNaN(dailyConsumption2) || dailyConsumption2 <= 0 ||
+          isNaN(dailyConsumption3) || dailyConsumption3 <= 0) {
+        alert('Please enter valid daily consumptions for all three months.');
+        return;
+      }
+
+      // Calculate monthly totals
+      var monthlyTotal1 = dailyConsumption1 * 30;
+      var monthlyTotal2 = dailyConsumption2 * 30;
+      var monthlyTotal3 = dailyConsumption3 * 30;
+
+      // Display the report as a bar chart
+      var chartData = {
+        labels: ['Month 1', 'Month 2', 'Month 3'],
+        datasets: [{
+          label: 'Water Consumption',
+          backgroundColor: ['#007bff', '#ffcc00', '#00cc66'],
+          data: [monthlyTotal1.toFixed(2), monthlyTotal2.toFixed(2), monthlyTotal3.toFixed(2)]
+        }]
+      };
+
+      var chartOptions = {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      };
+
+      var ctx = document.getElementById('monthlyChart').getContext('2d');
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: chartData,
+        options: chartOptions
+      });
+    }
+  </script>
+</body>
+</html>

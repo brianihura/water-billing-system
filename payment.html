@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="payment.css">
+  <title>Payment Options</title>
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+  <h1>Select Payment Method</h1>
+  
+  <label for="paymentMethod">Choose a payment method:</label>
+  <select id="paymentMethod">
+    <option value="creditCard">Credit Card</option>
+    <option value="mpesa">M-Pesa</option>
+    <!-- Add more options as needed -->
+  </select>
+
+  <button onclick="processPayment()">Proceed to Pay</button>
+
+  <form id="paymentForm" style="display:none;">
+    <label for="cardElement">Credit Card Details:</label>
+    <div id="cardElement"></div>
+    
+    <button type="submit">Pay Now</button>
+  </form>
+
+  <label for="phoneNumber" id="mpesaLabel" style="display:none;">Enter your M-Pesa phone number:</label>
+  <input type="tel" id="phoneNumber" placeholder="e.g., 254712345678" style="display:none;">
+
+  <button onclick="processMpesaPayment()" id="mpesaButton" style="display:none;">Pay with M-Pesa</button>
+
+  <script>
+    var stripe = Stripe("your-publishable-key");
+    var elements = stripe.elements();
+    var cardElement = elements.create('card');
+    cardElement.mount('#cardElement');
+
+    function processPayment() {
+      var selectedMethod = document.getElementById('paymentMethod').value;
+
+      if (selectedMethod === 'creditCard') {
+        alert('Redirecting to Credit Card Payment...');
+        document.getElementById('paymentForm').style.display = 'block';
+        document.getElementById('mpesaLabel').style.display = 'none';
+        document.getElementById('phoneNumber').style.display = 'none';
+        document.getElementById('mpesaButton').style.display = 'none';
+      } else if (selectedMethod === 'mpesa') {
+        alert('Redirecting to M-Pesa Payment...');
+        document.getElementById('paymentForm').style.display = 'none';
+        document.getElementById('mpesaLabel').style.display = 'block';
+        document.getElementById('phoneNumber').style.display = 'block';
+        document.getElementById('mpesaButton').style.display = 'block';
+      } else {
+        alert('Invalid payment method');
+      }
+    }
+
+    var paymentForm = document.getElementById('paymentForm');
+
+    paymentForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      stripe.createToken(cardElement).then(function(result) {
+        if (result.error) {
+          alert('Error: ' + result.error.message);
+        } else {
+          // You can now send result.token to your server for further processing
+          alert('Credit Card Payment successful! Token: ' + result.token.id);
+        }
+      });
+    });
+
+    function processMpesaPayment() {
+      var phoneNumber = document.getElementById('phoneNumber').value;
+
+      // Placeholder for M-Pesa payment processing logic
+      alert('Initiating M-Pesa payment for ' + phoneNumber);
+      // Add actual M-Pesa payment processing logic here
+    }
+  </script>
+</body>
+</html>

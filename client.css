@@ -1,0 +1,106 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.imgDiv img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    filter: brightness(10px);
+    background: inherit;
+}
+header {
+    padding: 5px 10px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px;
+    background-image: linear-gradient(to left, rgb(0, 0, 0), rgb(28, 28, 67), rgb(49, 49, 13));
+}
+.navLinks nav ul {
+    display: flex;
+    text-decoration: none;
+    list-style: none;
+}
+.navLinks nav ul li {
+    padding: 10px 20px;
+    color: antiquewhite;
+    font-weight: bold;
+    font-size: x-large;
+}
+body {
+    background-image: linear-gradient(rgba(5, 2, 8, 0.8),rgba(6, 6, 27, 0.8)), url(../images/bg12.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+a {
+    text-decoration: none;
+}
+a:visited {
+    color: rgb(156, 168, 179);
+}
+.mainView {
+    width: 70%;
+    height: 70vh;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: rgba(20, 54, 82, 0.7); /* Adjust the alpha value for transparency */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(33, 14, 48, 0.7), 0 1px 3px rgba(0, 0, 0, 0.08); 
+}
+.balance {
+    display: flex;
+    justify-content: space-around;
+}
+.amount {
+    width: 40%;
+    height: 10rem;
+    background-color: rgb(90, 84, 114, 0.5);
+    border-radius: 13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(14, 17, 17);
+}
+.bill {
+    width: 40%;
+    height: 10rem;
+    background-color: rgb(94, 124, 150, 0.5);
+    border-radius: 13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(14, 17, 17);
+}
+.bill i {
+    font-size: x-small;
+    
+}
+.bill p {
+    color: rgb(115, 156, 192);
+}
+.amount i {
+    color: rgb(115, 156, 192);
+}
+.btns {
+    margin-top: 10rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+.btns button {
+    padding: 10px;
+    background-color: rgb(98, 124, 116);
+    font-weight: bold;
+    color: rgb(14, 17, 17);
+}

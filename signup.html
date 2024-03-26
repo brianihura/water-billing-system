@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>sign In and Sign Up Form </title>
+    <link rel="stylesheet" href="css/signup.css">
+   
+    <script src="https://kit.fontawesome.com/f790b12bdd.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header>
+            <!-- logo -->
+            <div class="imgDiv">
+                <img src="images/logo.jpg" alt="logo not seen lol!" >
+            </div>
+            <!-- links -->
+            <div class="navLinks">
+                <nav>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="signup.html">Register</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="container">
+            <div class="form-box">
+                <h1>SIGN UP</h1>
+                <form action="signup.php" method="post" id="form">
+                    <div class="input-group">
+                        <div class="input-field" id="namefield">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" placeholder="Name" name="name" requiredpattern="[0-9]{10}" title="Please enter only letter" required>
+                            <div class="error"></div>
+                        </div>
+                        <div class="input-field" id="phonefield">
+                            <i class="fa-solid fa-phone"></i>
+                            <input type="number" placeholder="Phone" name="phone" requiredpattern="[0-9]{10}" title="Please enter only numbers"required>
+                            <div class="error"></div>
+                        </div>
+                        <div class="input-field" id="locationfield">
+                            <i class="fa-solid fa-map-marker-alt"></i>
+                            <input type="text" placeholder="Location" name="location" required>
+                            <div class="error"></div>
+                        </div>
+                        <div class="input-field">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" placeholder="Email" name="email" required>
+                            <div class="error"></div>
+                        </div>
+                        <div class="input-field">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" placeholder="Password" name="password" required>
+                            <div class="error"></div>
+                        </div>
+                    </div>
+                    <div class="btn-field">
+                        <button type="submit" id="signinBtn">Sign Up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <!-- <script>
+        const form = document.getElementById('form');
+        const name = document.getElementById('name');
+        const phone = document.getElementById('phone');
+        const location = document.getElementById('location');
+        const email = document.getElementById('email');
+        const password = document.getElementById('password');
+        
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+        
+            validateInputs();
+        });
+        
+        const setError = (element, message) => {
+            const inputControl = element.parentElement;
+            const errorDisplay = inputControl.querySelector('.error');
+        
+            errorDisplay.innerText = message;
+            inputControl.classList.add('error');
+            inputControl.classList.remove('success');
+        };
+        
+        const setSuccess = element => {
+            const inputControl = element.parentElement;
+            const errorDisplay = inputControl.querySelector('.error');
+        
+            errorDisplay.innerText = '';
+            inputControl.classList.add('success');
+            inputControl.classList.remove('error');
+        };
+        
+        const isValidEmail = email => {
+            const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        };
+        
+        const validateInputs = () => {
+    const nameValue = name.value.trim();
+    const phoneValue = phone.value.trim();
+    const locationValue = location.value.trim();
+    const emailValue = email.value.trim();
+    const passwordValue = password.value.trim();
+
+    let hasErrors = false; // Flag to track if any errors occurred
+
+    if (nameValue === '') {
+        setError(name, 'Name is required');
+        hasErrors = true; // Set flag to true if error occurs
+    } else {
+        setSuccess(name);
+    }
+
+    if (phoneValue === '') {
+        setError(phone, 'Phone is required');
+        hasErrors = true; // Set flag to true if error occurs
+    } else {
+        setSuccess(phone);
+    }
+
+    if (locationValue === '') {
+        setError(location, 'Location is required');
+        hasErrors = true; // Set flag to true if error occurs
+    } else {
+        setSuccess(location);
+    }
+
+    if (emailValue === '') {
+        setError(email, 'Email is required');
+        hasErrors = true; // Set flag to true if error occurs
+    } else if (!isValidEmail(emailValue)) {
+        setError(email, 'Provide a valid email address');
+        hasErrors = true; // Set flag to true if error occurs
+    } else {
+        setSuccess(email);
+    }
+
+    if (passwordValue === '') {
+        setError(password, 'Password is required');
+        hasErrors = true; // Set flag to true if error occurs
+    } else if (passwordValue.length < 8) {
+        setError(password, 'Password must be at least 8 characters');
+        hasErrors = true; // Set flag to true if error occurs
+    } else {
+        setSuccess(password);
+    }
+
+    if (!hasErrors) {
+        // If no errors, submit the form
+        form.submit();
+    }
+};
+        </script> -->
+        
+        </body>
+        </html>
