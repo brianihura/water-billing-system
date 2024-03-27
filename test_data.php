@@ -3,7 +3,7 @@
 $hostname = "localhost";
 $username = "root";
 $password = "";
-$database = "waterbilllng";
+$database = "webapp";
 
 $conn = mysqli_connect($hostname, $username, $password, $database);
 

@@ -17,8 +17,9 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 16px;
-    background-image: linear-gradient(to left, rgb(0, 0, 0), rgb(28, 28, 67), rgb(49, 49, 13));
+    background-color: rgb(129, 184, 238);
+    /* margin: 16px; */
+    /* background-image: linear-gradient(to left, rgb(0, 0, 0), rgb(28, 28, 67), rgb(49, 49, 13)); */
 }
 .navLinks nav ul {
     display: flex;
@@ -32,7 +33,7 @@ header {
     font-size: x-large;
 }
 body {
-    background-image: linear-gradient(rgba(5, 2, 8, 0.8),rgba(6, 6, 27, 0.8)), url(../images/bg12.jpg);
+    background-image: linear-gradient(rgba(5, 2, 8, 0),rgba(6, 6, 27, 0.8)), url(../images/bg23.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -44,14 +45,16 @@ a {
     text-decoration: none;
 }
 a:visited {
-    color: rgb(156, 168, 179);
+    color: black;
 }
 .mainView {
     width: 70%;
     height: 70vh;
     margin: 0 auto;
+    margin-top: 25px;
     border-radius: 10px;
-    background-color: rgba(20, 54, 82, 0.7); /* Adjust the alpha value for transparency */
+    background-color: aliceblue;
+    /* background-color: rgba(99, 103, 81, 0.7); Adjust the alpha value for transparency */
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 4px 6px rgba(33, 14, 48, 0.7), 0 1px 3px rgba(0, 0, 0, 0.08); 
@@ -59,6 +62,7 @@ a:visited {
 .balance {
     display: flex;
     justify-content: space-around;
+
 }
 .amount {
     width: 40%;
@@ -87,10 +91,10 @@ a:visited {
     
 }
 .bill p {
-    color: rgb(115, 156, 192);
+    color: black;
 }
 .amount i {
-    color: rgb(115, 156, 192);
+    color: black;
 }
 .btns {
     margin-top: 10rem;
