@@ -1,9 +1,9 @@
 <?php
 
-$hostname = "localhost";
+$hostname = "9982-197-136-183-22.ngrok-free.app";
 $username = "root";
 $password = "";
-$database = "webapp";
+$database = "waterbilllng";
 
 $conn = mysqli_connect($hostname, $username, $password, $database);
 

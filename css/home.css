@@ -53,6 +53,8 @@ body {
     font-style: italic;
     color: rgb(67, 147, 181);
     font-size: 2rem;
+    align-items: center;
+    display: flex;
 }
 /* marquee {
     margin-top: 4rem;

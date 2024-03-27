@@ -41,7 +41,7 @@ session_start();
             <div></div>
             <div class="btns">
                 <button><a href="invoice.php">Generate Invoice</a></button>
-                <button><a href="payment.html">Make Payment</a></button>
+                <button><a href="payment.php">Make Payment</a></button>
                 <button><a href="report.html">Generate Report</a></button>
             </div>
         </div>

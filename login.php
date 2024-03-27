@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $servername = "localhost";
     $db_username = "root";
     $db_password = "";
-    $database = "webapp";
+    $database = "waterbilllng";
 
     $conn = new mysqli($servername, $db_username, $db_password, $database);
 

@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $servername = "localhost";
     $username = "root"; // Replace with your database username 
     $password_db = ""; // Replace with your database password
-    $database = "webapp"; // Replace with your database name
+    $database = "waterbilllng"; // Replace with your database name
 
     $conn = new mysqli($servername, $username, $password_db, $database);
 

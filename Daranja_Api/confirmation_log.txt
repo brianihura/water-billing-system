@@ -1,3 +1,0 @@
-Confirmation received for Transaction ID: , Amount: 
-Confirmation received for Transaction ID: RKTQDM7W6S, Amount: 100
-Confirmation received for Transaction ID: RKTQDM7W6S, Amount: 100
