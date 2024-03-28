@@ -37,13 +37,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Fetch readings_value from sensor_readings table
             $user_id = $user["user_id"];
-            $sql_readings = "SELECT readings_value, amount FROM sensor_readings WHERE sensor_id = (SELECT sensor_id FROM sensors WHERE user_id = '$user_id')";
+            $sql_readings = "SELECT sensor_id, readings_value, amount FROM sensor_readings WHERE sensor_id = (SELECT sensor_id FROM sensors WHERE user_id = '$user_id')";
             $result_readings = $conn->query($sql_readings);
 
             if ($result_readings->num_rows > 0) {
                 $readings = $result_readings->fetch_assoc();
                 $_SESSION["readings_value"] = $readings["readings_value"];
                 $_SESSION["amount"] = $readings["amount"];
+                $_SESSION["sensor_id"] = $readings["sensor_id"];
                 
             }
 
