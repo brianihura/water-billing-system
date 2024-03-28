@@ -13,7 +13,7 @@ session_start();
 <body>
   <?php
   // Check if amount is greater than 0
-  $amount = isset($_SESSION["amount"]) ? $_SESSION["amount"] : 0;
+  $amount = 10;
   if ($amount > 0) {
       // If amount is greater than 0, display the form with inputs enabled
   ?>

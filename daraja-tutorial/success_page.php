@@ -23,7 +23,7 @@ if(isset($_SESSION['user_id']) && isset($_SESSION['sensor_id'])) {
 
     if ($conn->query($sql) === TRUE) {
         echo "Amount and readings_value updated successfully";
-        header("Location: done.php"); // Redirect to dashboard or another authenticated page
+        header("Location: client.php"); // Redirect to dashboard or another authenticated page
         exit();
     } else {
         echo "Error updating amount and readings_value: " . $conn->error;
