@@ -6,52 +6,27 @@ session_start();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="invoice.css">
   <title>Water Billing System</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
-
-    table {
-      width: 60%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-
-    th, td {
-      border: 1px solid #ddd;
-      padding: 10px;
-      text-align: left;
-    }
-
-    label {
-      display: block;
-      margin-top: 10px;
-    }
-
-    input {
-      padding: 8px;
-      margin-bottom: 10px;
-    }
-
-    button {
-      background-color: #007bff;
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      cursor: pointer;
-    }
-  </style>
 </head>
+<header>
+        <!-- logo -->
+        <div class="imgDiv">
+            <img src="images/logo.jpg" alt="logo not seen lol!" >
+        </div>
+        <!-- links -->
+        <div class="navLinks">
+            <nav>
+                <ul>
+                    <li><a href="client.php">Back</a></li>
+                    <li><a href="payment.php">Make payment</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 <body>
+
+  <div class="change">
   <h1>Water Billing System</h1>
 
   <label for="quantity">Quantity of water used (liters):</label>
@@ -113,5 +88,6 @@ session_start();
       document.getElementById('invoiceTable').style.display = 'table';
     }
   </script>
+  </div>
 </body>
 </html>

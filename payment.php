@@ -11,6 +11,21 @@ session_start();
   <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
+<header>
+        <!-- logo -->
+        <div class="imgDiv">
+            <img src="images/logo.jpg" alt="logo not seen lol!" >
+        </div>
+        <!-- links -->
+        <div class="navLinks">
+            <nav>
+                <ul>
+                    <li><a href="client.php">Back</a></li>
+                    <li><a href="invoice.php">Invoice</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
   <?php
   // Check if amount is greater than 0
   $amount = isset($_SESSION["amount"]) ? $_SESSION["amount"] : 0;
@@ -19,18 +34,21 @@ session_start();
   ?>
   <h1>Please Enter Full Amount: <strong><?php echo $amount; ?> Ksh</strong></h1>
   <form action="/daraja-tutorial/stk_initiate.php" method="POST">
-    <label for="inputAddress" class="form-label">Amount</label>
+    <div class="label">
+    <label for="inputAddress" class="form-label">Amount</label></br>
     <input class="form-control" name="amount" placeholder="Enter amount">
+   
 
     <label for="inputAddress2" class="form-label">Phone Number</label>a
     <input type="text" class="form-control" name="phone" placeholder="Enter Phone Number">
-
+    </div>
     <button type="submit" class="btn btn-success" name="submit" value="submit">Pay Now</button>
   </form>
   <?php
   } else {
       // If amount is 0, display the form with inputs disabled
   ?>
+  <div class="change">
   <h1>Please Enter Full Amount: <strong>0 Ksh</strong></h1>
   <form action="/daraja-tutorial/stk_initiate.php" method="POST">
     <label for="inputAddress" class="form-label">Amount</label>
@@ -40,6 +58,7 @@ session_start();
     <input type="text" class="form-control" name="phone" placeholder="Enter Phone Number" disabled>
 
     <button type="submit" class="btn btn-success" name="submit" value="submit" disabled>Pay Now</button>
+  </div>
   </form>
   <?php
   }

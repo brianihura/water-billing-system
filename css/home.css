@@ -40,7 +40,7 @@ body {
     background-attachment: fixed;
 }
 .mainBody {
-    margin-top: 4rem;
+    /* margin-top: 4rem; */
     margin-left: 16px;
     color: rgb(173, 173, 173);
 }
@@ -51,7 +51,7 @@ body {
 }
 .mainBody p {
     font-style: italic;
-    color: rgb(67, 147, 181);
+    color: black;
     font-size: 2rem;
     align-items: center;
     display: flex;
@@ -87,7 +87,8 @@ footer{
     background-color: rgb(106, 162, 212);
     text-align: center;
     padding: 20px 0;
-    position:absolute;
+    position:fixed;
     bottom: 0;
     width: 100%;
+    justify-content: baseline;
 }

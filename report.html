@@ -3,51 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="report.css">
   <title>Monthly Water Consumption Report</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
-
-    label {
-      display: block;
-      margin-top: 10px;
-    }
-
-    input {
-      padding: 8px;
-      margin-bottom: 10px;
-    }
-
-    button {
-      background-color: #007bff;
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-
-    h2 {
-      margin-top: 20px;
-    }
-
-    canvas {
-      max-width: 80%;
-      margin-top: 20px;
-    }
-  </style>
+  
 </head>
 <body>
+  <header>
+    <!-- logo -->
+    <div class="imgDiv">
+        <img src="images/logo.jpg" alt="logo not seen lol!" >
+    </div>
+    <!-- links -->
+    <div class="navLinks">
+        <nav>
+            <ul>
+                <li><a href="client.php">Home</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="change">  
   <h1>Monthly Water Consumption Report</h1>
 
   <label for="dailyConsumption1">Enter daily water consumption for Month 1 (liters):</label>
@@ -62,8 +38,9 @@
   <button onclick="generateReport()">Generate Report</button>
 
   <h2>Monthly Report</h2>
-  <canvas id="monthlyChart"></canvas>
 
+  <canvas id="monthlyChart"></canvas>
+</div>
   <script>
     function generateReport() {
       var dailyConsumption1 = parseFloat(document.getElementById('dailyConsumption1').value);

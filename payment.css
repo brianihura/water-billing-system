@@ -1,0 +1,74 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.imgDiv img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    filter: brightness(10px);
+    background: inherit;
+}
+header {
+    padding: 5px 10px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(129, 184, 238);
+    /* margin: 16px; */
+    /* background-image: linear-gradient(to left, rgb(0, 0, 0), rgb(28, 28, 67), rgb(49, 49, 13)); */
+}
+.navLinks nav ul {
+    display: flex;
+    text-decoration: none;
+    list-style: none;
+}
+.navLinks nav ul li {
+    padding: 10px 20px;
+    color: antiquewhite;
+    font-weight: bold;
+    font-size: x-large;
+}
+body {
+    background-image: linear-gradient(rgba(5, 2, 8, 0),rgba(6, 6, 27, 0.8)), url(../images/bg23.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+.change {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 50%;
+    height: 50vh;
+    margin-top: 50px;
+    border-radius: 10px;
+    background-color: rgb(81, 128, 169);
+    /* background-color: rgba(99, 103, 81, 0.7); Adjust the alpha value for transparency */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(33, 14, 48, 0.7), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+
+button {
+    background-color: #21837f;
+    color: #fff;
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: center;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.form-label{
+    margin-top: 50px;
+}
