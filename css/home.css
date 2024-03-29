@@ -44,10 +44,11 @@ body {
     margin-left: 16px;
     color: rgb(173, 173, 173);
 }
-.mainBody h1 {
+ h1 {
     font-size: 4rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bold;
+    color: rgb(176, 138, 88);
 }
 .mainBody p {
     font-style: italic;
@@ -92,3 +93,27 @@ footer{
     width: 100%;
     justify-content: baseline;
 }
+.carousel-item {
+    height: 90vh;
+    min-height: 300px; /* Adjust min-height as needed */
+    background-size: cover;
+    background-position: center;
+   
+}
+.carousel-item.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carousel-item p {
+    color: black;
+    font-size: 24px;
+    align-items: flex-end;
+    display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 80vh;
+}
+.carousel-control-prev,
+.carousel-control-next {
+    display: none;
